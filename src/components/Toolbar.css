@@ -1,0 +1,17 @@
+.toolbar {
+    display: flex;
+    flex-direction: row;
+
+    border: var(--default-border);
+    background-color: var(--dark-accent);
+}
+.toolbar h2 {
+    font-family: 'Russo One';
+    font-weight: 400;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.toolbar i {
+    margin: 0 .5rem
+}
