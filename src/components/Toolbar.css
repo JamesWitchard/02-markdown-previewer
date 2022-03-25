@@ -1,12 +1,16 @@
 .toolbar {
+    margin: 0;
     display: flex;
     flex-direction: row;
-
+    align-items: center;
+    padding-block: .5rem;
     border: var(--default-border);
-    background-color: var(--dark-accent);
+    background-color: var(--background-200);
+    box-shadow: var(--shadow);
+
 }
 .toolbar h2 {
-    font-family: 'Russo One';
+    font-family: 'Russo One', sans-serif;
     font-weight: 400;
     font-size: 1rem;
     margin: 0;
@@ -14,4 +18,18 @@
 
 .toolbar i {
     margin: 0 .5rem
+}
+
+.toolbar .expand {
+    display: inherit;
+    flex-grow: 1;
+    justify-content: flex-end;
+    font-size: 1.125rem;
+
+}
+
+.expand i:hover {
+    color: var(--light-accent);
+    transition: 100ms ease-in;
+    cursor: pointer;
 }

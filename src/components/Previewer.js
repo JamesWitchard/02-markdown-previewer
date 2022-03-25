@@ -1,4 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
+import Prism from 'prismjs'
 
 import Toolbar from "./Toolbar";
 import {marked} from "marked";
@@ -6,8 +7,13 @@ import {marked} from "marked";
 import './Previewer.css';
 
 marked.use({
-    breaks: true
-})
+    breaks: true,
+    langPrefix: "language-javascript",
+    highlight: function (code) {
+        return Prism.highlight(code, Prism.languages.javascript, 'javascript');
+    }
+});
+
 
 const Previewer = (props) => {
     const [parsedInput, setParsedInput] = useState()
@@ -24,7 +30,7 @@ const Previewer = (props) => {
     return (
         <div className="prev-wrap">
             <Toolbar
-                header="Previewer"
+                header="Previewer" onResizeClick={props.onResizeClick}
             />
             <section id="preview" ref={previewRef}>
             </section>

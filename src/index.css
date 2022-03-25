@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Russo+One');
 
 :root {
-    --dark-accent: #4aa3a3;
-    --light-accent: #c0d8d8;
-    --background-base: #619e9e;
+    --background-200: #4aa3a3;
+    --background-400: #619e9e;
+    --background-600: #c0d8d8;
 
-    --shadow: 1px 1px 10px 2px black;
-    --default-border: 1px solid black;
+    --light-accent: #2cda9d;
+    --dark-accent: #224b4b;
+
+    --shadow: 1px 1px 10px 2px var(--dark-accent);
+    --default-border: 1px solid var(--dark-accent);
 }
 
 *, *::before, *::after { box-sizing: inherit; }
@@ -19,4 +22,9 @@ body {
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     margin: 0;
     padding: 0;
+    background-color: var(--background-400);
+}
+
+.hidden {
+    display: none;
 }

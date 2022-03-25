@@ -1,5 +1,4 @@
 import {useEffect, useState} from "react";
-import {marked} from "marked";
 
 import Editor from "./components/Editor";
 import Previewer from "./components/Previewer";
@@ -67,8 +66,12 @@ function App() {
       <Editor
           text={text}
           onChangeInput={handleInput}
+          onResizeClick={() => console.log("Bink!")}
       />
-      <Previewer parsedText={text}/>
+      <Previewer
+          parsedText={text}
+          onResizeClick={() => console.log("Bink!")}
+      />
     </div>
   );
 }

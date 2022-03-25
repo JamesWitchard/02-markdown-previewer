@@ -1,10 +1,18 @@
 .editor-wrap {
-    width: 37.5rem
+    width: 600px;
+    margin-bottom: 1.25rem;
 }
 
 #editor {
     width: 100%;
+    box-shadow: var(--shadow);
+    background-color: var(--background-600);
+
     resize: vertical;
     min-height: 200px;
     font-size: 0.875rem;
+}
+
+#editor:focus {
+    outline: none !important;
 }

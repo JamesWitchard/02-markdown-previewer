@@ -1,3 +1,20 @@
 .prev-wrap {
-    width: 62.5rem;
+    width: 800px;
+}
+
+#preview {
+    background-color: var(--background-600);
+    border: var(--default-border);
+    padding-inline: 1rem;
+    box-shadow: var(--shadow);
+}
+
+/* ============================================================
+                    Styling the parsed html
+============================================================ */
+
+#preview img {
+    display: block;
+    max-width: 90%;
+    margin: 2rem auto;
 }
