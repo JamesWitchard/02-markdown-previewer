@@ -4,13 +4,10 @@ import Toolbar from "./Toolbar";
 import "./Editor.css"
 
 const Editor = (props) => {
-    console.log(props.text)
     return (
         <div className="editor-wrap">
-            <Toolbar
-                header="Editor"
-            />
-            <textarea id="editor" cols="73" rows="11" wrap="hard">{props.text}</textarea>
+            <Toolbar header="Editor" />
+            <textarea id="editor" onChange={props.onChangeInput} value={props.text}/>
 
         </div>
     );

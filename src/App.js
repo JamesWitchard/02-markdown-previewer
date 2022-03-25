@@ -1,4 +1,5 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {marked} from "marked";
 
 import Editor from "./components/Editor";
 import Previewer from "./components/Previewer";
@@ -6,8 +7,7 @@ import Previewer from "./components/Previewer";
 import './App.css';
 
 // example markdown placeholder text:
-const PLACEHOLDER =
-    "# Welcome to my React Markdown Previewer!\n" +
+const PLACEHOLDER = "# Welcome to my React Markdown Previewer!\n" +
     "\n" +
     "## This is a sub-heading...\n" +
     "### And here's some other cool stuff:\n" +
@@ -52,11 +52,23 @@ const PLACEHOLDER =
     "![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)\n";
 
 function App() {
-    const [text, setText] = useState(PLACEHOLDER);
+    const [text, setText] = useState('## Hello');
+
+    useEffect(() => {
+        setText(PLACEHOLDER);
+    }, []);
+
+    function handleInput(event) {
+        setText(event.target.value);
+    }
+
   return (
     <div className="App">
-      <Editor text={text}/>
-      <Previewer text={text}/>
+      <Editor
+          text={text}
+          onChangeInput={handleInput}
+      />
+      <Previewer parsedText={text}/>
     </div>
   );
 }
