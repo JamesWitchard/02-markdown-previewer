@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 import Editor from "./components/Editor";
 import Previewer from "./components/Previewer";
@@ -49,28 +49,50 @@ const PLACEHOLDER = "# Welcome to my React Markdown Previewer!\n" +
     "1. And last but not least, let's not forget embedded images:\n" +
     "\n" +
     "![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)\n";
+const expandIcon = "fa fa-arrows-alt";
+const contractIcon = "fa fa-compress";
 
 function App() {
     const [text, setText] = useState('## Hello');
+    const [hidden, setHidden] = useState(false);
+    const [toolbarIcon, setToolbarIcon] = useState(expandIcon);
+    console.log(hidden);
+    const previewRef = useRef();
+    const editorRef = useRef();
 
     useEffect(() => {
         setText(PLACEHOLDER);
     }, []);
-
     function handleInput(event) {
         setText(event.target.value);
     }
+    function handleResizeClick(thisRef, otherRef) {
+        setHidden(!hidden);
+        let thisElement = document.getElementById(thisRef.current.id);
+        let otherElement = document.getElementById(otherRef.current.id);
 
-  return (
+        otherElement.parentElement.classList.toggle("hide")
+        // toggle the icon of the element you clicked on
+        setToolbarIcon(hidden ? expandIcon : contractIcon);
+
+        // toggle adding/removing maximized class to the element you clicked on
+        thisElement.classList.toggle("maximized");
+    }
+
+    return (
     <div className="App">
       <Editor
           text={text}
           onChangeInput={handleInput}
-          onResizeClick={() => console.log("Bink!")}
+          onResizeClick={() => handleResizeClick(editorRef, previewRef)}
+          icon={toolbarIcon}
+          editorRef={editorRef}
       />
       <Previewer
           parsedText={text}
-          onResizeClick={() => console.log("Bink!")}
+          onResizeClick={() => handleResizeClick(previewRef, editorRef)}
+          icon={toolbarIcon}
+          previewRef={previewRef}
       />
     </div>
   );

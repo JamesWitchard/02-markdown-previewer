@@ -25,6 +25,11 @@ body {
     background-color: var(--background-400);
 }
 
-.hidden {
+.hide {
     display: none;
+}
+
+.maximized {
+    min-height: 94vh;
+    margin: auto;
 }

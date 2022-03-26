@@ -5,10 +5,10 @@ import './Toolbar.css';
 const Toolbar = (props) => {
     return (
         <div>
-            <div className="toolbar">
+            <div className="toolbar" >
                 <i className="fa fa-terminal" aria-hidden="true"/>
                 <h2>{props.header}</h2>
-                <div className="expand"><i className="fa fa-arrows-alt fa fa-compress" onClick={props.onResizeClick}/></div>
+                <div className="expand"><i className={props.icon} onClick={props.onResizeClick}/></div>
             </div>
         </div>
     );

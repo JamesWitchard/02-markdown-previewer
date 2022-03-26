@@ -1,17 +1,25 @@
 .editor-wrap {
     width: 600px;
-    margin-bottom: 1.25rem;
 }
 
-#editor {
+
+.maximized textarea {
+    min-height: 94vh;
+    resize: none;
+}
+
+textarea {
     width: 100%;
     box-shadow: var(--shadow);
     background-color: var(--background-600);
 
-    resize: vertical;
+    margin-bottom: 1.25rem;
     min-height: 200px;
+    resize: vertical;
+    height: available;
     font-size: 0.875rem;
 }
+
 
 #editor:focus {
     outline: none !important;

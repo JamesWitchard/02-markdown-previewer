@@ -1,5 +1,6 @@
 .prev-wrap {
     width: 800px;
+    min-height: fit-content;
 }
 
 #preview {
