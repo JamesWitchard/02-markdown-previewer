@@ -20,10 +20,12 @@ const Previewer = (props) => {
 
 
     useEffect(() => {
+        // parse incoming text
         setParsedInput(marked.parse(props.parsedText));
     }, [props.parsedText]);
 
     useEffect(() => {
+        // change the inner html of the element to the parsed markdown text
         props.previewRef.current.innerHTML = parsedInput;
     }, [parsedInput]);
 

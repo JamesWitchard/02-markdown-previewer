@@ -66,6 +66,7 @@ function App() {
     function handleInput(event) {
         setText(event.target.value);
     }
+
     function handleResizeClick(thisRef, otherRef) {
         setHidden(!hidden);
         let thisElement = document.getElementById(thisRef.current.id);
@@ -73,7 +74,7 @@ function App() {
 
         otherElement.parentElement.classList.toggle("hide")
         // toggle the icon of the element you clicked on
-        setToolbarIcon(hidden ? expandIcon : contractIcon);
+        setToolbarIcon((hidden === true) ? expandIcon : contractIcon);
 
         // toggle adding/removing maximized class to the element you clicked on
         thisElement.classList.toggle("maximized");

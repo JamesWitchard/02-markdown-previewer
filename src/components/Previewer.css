@@ -13,6 +13,90 @@
 /* ============================================================
                     Styling the parsed html
 ============================================================ */
+#preview h1 {
+    font-size: 2rem;
+    padding-bottom: 0.25rem;
+    border-bottom-width: 2px;
+    border-bottom-color: var(--dark-accent);
+    border-bottom-style: solid;
+}
+
+#preview h2 {
+    padding-bottom: 0.125rem;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--dark-accent);
+    border-bottom-style: solid;
+}
+
+#preview blockquote {
+    color: var(--dark-accent);
+    padding-left: 0.5rem;
+    border-left-width: 3px;
+    border-left-color: var(--dark-accent);
+    border-left-style: solid;
+}
+
+#preview table {
+    border-collapse: collapse;
+}
+
+#preview table th, td {
+    padding: 0.25rem;
+    text-align: left;
+    border: 2px solid var(--dark-accent);
+}
+
+/* ============================================================
+              Styling code-syntax highlighting
+============================================================ */
+
+#preview p>code {
+    background-color: white;
+    padding: 0.125rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+#preview pre {
+    --code-punctuation: #6f7f90;
+    --code-keyword: #0076aa;
+    --code-function: #db4968;
+    --code-operator: #9f6d3b;
+    --code-string : #659801;
+
+}
+
+#preview code {
+    background-color: white;
+    display: block;
+    padding: 0.5rem;
+    font-weight: bold;
+    line-height: 1.25rem;
+}
+
+#preview code .comment {
+    color: var(--code-punctuation);
+}
+
+#preview code .punctuation {
+    color: var(--code-punctuation);
+}
+
+#preview code .keyword {
+    color: var(--code-keyword)
+}
+
+#preview code .function {
+    color: var(--code-function)
+}
+
+#preview code .operator {
+    color: var(--code-operator)
+}
+
+#preview code .string {
+    color: var(--code-string)
+}
 
 #preview img {
     display: block;
